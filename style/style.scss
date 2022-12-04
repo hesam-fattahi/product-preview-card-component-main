@@ -1,0 +1,111 @@
+$color-primary: hsl(158, 36%, 37%);
+$color-text--dark: hsl(212, 21%, 14%);
+$color-text--light: hsl(228, 12%, 48%);
+$color-white: hsl(0, 0%, 100%);
+$color-bg: hsl(30, 38%, 92%);
+
+@mixin center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  height: 100vh;
+  background-color: $color-bg;
+  padding: 1.4rem;
+  @include center-items;
+}
+
+p {
+  color: $color-text--light;
+  line-height: 1.75;
+}
+
+.product {
+  max-width: 60rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 2rem rgba($color-text--light, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__img {
+    flex: 1 0 24rem;
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    flex: 1 0 24rem;
+    background-color: hsl(0, 0%, 100%);
+    padding: 2.4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 31.25em) {
+      gap: 1.6rem;
+    }
+  }
+
+  &__category {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  &__title,
+  &__price--current {
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  &__title {
+    line-height: 1.1;
+    color: $color-text--dark;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    &--current {
+      color: $color-primary;
+    }
+    &--original {
+      color: $color-text--light;
+    }
+  }
+
+  &__btn {
+    border: none;
+    background-color: $color-primary;
+    color: $color-white;
+    font: inherit;
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+    transition: 0.25s ease-out;
+    @include center-items;
+    gap: 1.2rem;
+
+    &:hover {
+      background-color: darken($color-primary, 15%);
+    }
+  }
+}
