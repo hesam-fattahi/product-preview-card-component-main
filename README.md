@@ -19,4 +19,4 @@ The challenge was to build out this product preview card component based on the 
 
 ## Live preview
 
-- Live Site URL: [Project live preview](https://your-live-site-url.com)
+- Live Site URL: [Project live preview](https://hesam-fattahi.github.io/product-preview-card-component-main/)
